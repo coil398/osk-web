@@ -1,3 +1,0 @@
-# controllers/default.py
-def index():
-    return 'Hello World!!'

@@ -1,0 +1,8 @@
+[2015-03-15 20:55:21] START
+[2015-03-15 20:55:59] CREATE home.py: 0
+[2015-03-15 20:56:11] CREATE home/index.html: 0
+[2015-03-15 21:19:40] DELETE osk/controllers/default.py: -51
+[2015-03-15 21:19:50] DELETE osk/views/default/index.html: -32
+[2015-03-15 21:19:53] DELETE osk/views/default/user.html: -23
+[2015-03-15 21:32:57] CREATE home/test.html: 0
+[2015-03-15 21:33:38] EDIT osk/controllers/home.py: 1
