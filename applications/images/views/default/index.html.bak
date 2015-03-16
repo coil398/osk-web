@@ -1,0 +1,8 @@
+{{extend 'layout.html'}}
+<h1>Current Images</h1>
+<ul>
+    <p>
+        あああ
+    </p>
+</ul>
+</ul>

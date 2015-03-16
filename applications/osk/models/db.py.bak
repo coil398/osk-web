@@ -1,0 +1,5 @@
+try:
+    db = DAL('gae')
+    session.connect(request,response,db)
+catch:
+    db = DAL('sqlite://storage.db')

@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S'<type \'exceptions.RuntimeError\'> Failure to connect, tried 5 times:\nTraceback (most recent call last):\n  File "/Volumes/ADD/web2py/gluon/dal/base.py", line 410, in __init__\n    self._adapter = ADAPTERS[self._dbname](**kwargs)\n  File "/Volumes/ADD/web2py/gluon/dal/adapters/base.py", line 47, in __call__\n    obj = super(AdapterMeta, cls).__call__(*args, **kwargs)\n  File "/Volumes/ADD/web2py/gluon/dal/adapters/google.py", line 136, in __init__\n    \'boolean\': gae.BooleanProperty,\nAttributeError: \'NoneType\' object has no attribute \'BooleanProperty\'\n'
+p3
+sS'layer'
+p4
+S'/Volumes/ADD/web2py/applications/pets/models/db.py'
+p5
+sS'code'
+p6
+S"db = DAL('gae')\nsession.connect(request,response,db)\n"
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/Volumes/ADD/web2py/gluon/restricted.py", line 224, in restricted\n    exec ccode in environment\n  File "/Volumes/ADD/web2py/applications/pets/models/db.py", line 1, in <module>\n    db = DAL(\'gae\')\n  File "/Volumes/ADD/web2py/gluon/dal/base.py", line 432, in __init__\n    raise RuntimeError("Failure to connect, tried %d times:\\n%s" % (attempts, tb))\nRuntimeError: Failure to connect, tried 5 times:\nTraceback (most recent call last):\n  File "/Volumes/ADD/web2py/gluon/dal/base.py", line 410, in __init__\n    self._adapter = ADAPTERS[self._dbname](**kwargs)\n  File "/Volumes/ADD/web2py/gluon/dal/adapters/base.py", line 47, in __call__\n    obj = super(AdapterMeta, cls).__call__(*args, **kwargs)\n  File "/Volumes/ADD/web2py/gluon/dal/adapters/google.py", line 136, in __init__\n    \'boolean\': gae.BooleanProperty,\nAttributeError: \'NoneType\' object has no attribute \'BooleanProperty\'\n\n'
+p11
+s.

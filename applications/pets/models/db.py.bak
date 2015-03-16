@@ -1,0 +1,5 @@
+try:
+    db=DAL("sqlite://db.db")
+except:
+    db=DAL('gae')
+    session.connect(request,response,db=db)
