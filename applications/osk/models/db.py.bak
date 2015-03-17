@@ -1,5 +1,15 @@
-try:
-    db = DAL('gae')
-    session.connect(request,response,db)
-catch:
-    db = DAL('sqlite://storage.db')
+db = DAL('sqlite://storage.sqlite')
+
+from gluon.tools import *
+auth = Auth(db)
+auth.define_tables()
+crud = Crud(db)
+
+db.define_table('items',
+   Field('title'),
+   Field('body','text'),
+   Field('created_on', 'datetime', default=request.now),
+   Field('created_by', 'reference auth_user', default=auth.user_id),
+   format = '%(title)s')
+
+"""データベース設定ここまで"""

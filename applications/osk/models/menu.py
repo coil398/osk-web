@@ -7,7 +7,7 @@
 
 response.logo = A(B('web',SPAN(2),'py'),XML('&trade;&nbsp;'),
                   _class="brand",_href="http://www.web2py.com/")
-response.title = request.application.replace('_',' ').title()
+response.title = '応用数学研究部'
 response.subtitle = ''
 
 ## read more at http://dev.w3.org/html5/markup/meta.name.html
@@ -23,7 +23,7 @@ response.google_analytics_id = None
 #########################################################################
 
 response.menu = [
-    (T('Home'), False, URL('default', 'index'), [])
+    (T('Home'), False, URL('home', 'index'), [])
 ]
 
 DEVELOPMENT_MENU = True

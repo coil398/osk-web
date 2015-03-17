@@ -1,0 +1,40 @@
+try:
+    db = DAL('gae')
+    session.connect(request,response,db)
+except:
+    db = DAL('sqlite://storage.db')
+
+"""ユーザー認証設定"""
+from gluon.tools import *
+auth = Auth(db)
+auth.define_tables()
+crud = Crud(db)
+
+"""auth.settings.controller = 'default'"""
+
+"""ユーザー認証設定ここまで"""
+auth.settings.login_next = URL('index')
+auth.settings.logout_next = URL('index')
+auth.settings.profile_next = URL('index')
+auth.settings.register_next = URL('user', args='login')
+auth.settings.retrieve_username_next = URL('index')
+auth.settings.retrieve_password_next = URL('index')
+auth.settings.change_password_next = URL('index')
+auth.settings.request_reset_password_next = URL('user', args='login')
+auth.settings.reset_password_next = URL('user', args='login')
+auth.settings.verify_email_next = URL('user', args='login')
+
+"""データベース設定"""
+db.define_table('items',
+   Field('title'),
+   Field('body','text'),
+   Field('created_on','datetime', default=request.now),
+   Field('created_by','reference auth_user','default=auth.user_id'),
+   format = '%(title)s')
+
+db.items.title.requires = IS_NOT_EMPTY()
+"""db.items.body.requires = IS_NOT_EMPTY()"""
+db.items.created_by.readable = db.items.created_by.writable = False
+db.items.created_on.readable = db.items.created_on.writable = False
+
+"""データベース設定ここまで"""
