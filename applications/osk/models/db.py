@@ -10,9 +10,6 @@ auth = Auth(db)
 auth.define_tables()
 crud = Crud(db)
 
-auth.settings.controller = 'home'
-
-
 """ユーザー認証設定ここまで"""
 
 """データベース設定"""

@@ -1,7 +1,7 @@
 routers = dict(
     BASE = dict(
         default_application = 'osk',
-        default_controller = 'home',
+        default_controller = 'default',
         default_function = 'index'))
 
 routes_in = (
