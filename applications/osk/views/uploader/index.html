@@ -1,0 +1,21 @@
+{{extend 'layout.html'}}
+{{=A('画像をアップロード',_href=URL('upload'),_class='btn btn-primary')}}
+<br/><br/>
+サムネイル　　　タイトル　　　　　　　概要
+{{for image in images:}}
+<div class="upImages">
+<span class="UpImage">
+<img width="100px"
+     src="{{=URL('download', args=image.file)}}" />
+ </span>
+ <span class="imageTitle">
+{{=(A(image.title, _href=URL("show", args=image.id)))}}
+</span>
+{{if image.note:}}
+<span class="imageNote">
+{{=image.note}}
+{{pass}}
+</div>
+<br/>
+{{pass}}
+{{}}

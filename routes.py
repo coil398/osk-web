@@ -4,10 +4,12 @@ routers = dict(
         default_controller = 'default',
         default_function = 'index'))
 
+"""
 routes_in = (
-  ('/$c/$f', '/init/$c/$f'),
+  ('/$c/$f', '/osk/$c/$f')
 )
 
 routes_out = (
-  ('/init/$c/$f', '/$c/$f'),
+  ('/osk/$c/$f', '/$c/$f')
 )
+"""

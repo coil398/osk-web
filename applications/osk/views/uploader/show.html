@@ -1,0 +1,7 @@
+{{extend 'layout.html'}}
+タイトル:{{=image.title}}
+<img width="1000px"
+     src="{{=URL('download', args=image.file)}}" />
+<br/>
+概要:{{=image.note}}
+{{=form}}

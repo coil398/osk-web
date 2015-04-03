@@ -240,6 +240,7 @@
 'try something like': 'try something like',
 'Try the mobile interface': 'Try the mobile interface',
 'try view': 'try view',
+'Unable to check for upgrades': 'Unable to check for upgrades',
 'Unable to download because:': '以下の理由でダウンロードできません:',
 'uncheck all': '全ての選択を解除',
 'Uninstall': 'アプリ削除',
