@@ -7,15 +7,18 @@ except:
 """ユーザー認証設定"""
 from gluon.tools import *
 auth = Auth(db)
-auth.define_tables()
+auth.define_tables(username=True)
+"""auth.settings.actions_disabled.append('register')"""
 crud = Crud(db)
 """ユーザー認証設定ここまで"""
 
 """データベース設定"""
 """記事設定"""
-db.define_table('page',
+db.define_table('item',
     Field('title'),
     Field('body','text'),
+    Field('category'),
+    Field('tag'),
     Field('created_on','datetime', default=request.now),
     Field('created_by','reference auth_user',default=auth.user_id),
     format = '%(title)s')
@@ -29,10 +32,10 @@ db.define_table('image',
     Field('upload_by','reference auth_user',default=auth.user_id),
     format = '%(title)s')
 
-db.page.title.requires = IS_NOT_EMPTY()
-"""db.page.body.requires = IS_NOT_EMPTY()"""
-db.page.created_by.readable = db.page.created_by.writable = False
-db.page.created_on.readable = db.page.created_on.writable = False
+db.item.title.requires = IS_NOT_EMPTY()
+"""db.item.body.requires = IS_NOT_EMPTY()"""
+db.item.created_by.readable = db.item.created_by.writable = False
+db.item.created_on.readable = db.item.created_on.writable = False
 
 db.image.title.requires = IS_NOT_EMPTY()
 db.image.file.requires = IS_NOT_EMPTY()

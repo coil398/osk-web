@@ -876,3 +876,43 @@ success!
 success!
 success!
 success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2015-04-05T23:57:15.931330
+CREATE TABLE item(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(512),
+    body TEXT,
+    category CHAR(512),
+    tag CHAR(512),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2015-04-06T00:01:34.321717
+ALTER TABLE auth_user ADD username CHAR(128);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!

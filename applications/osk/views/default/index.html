@@ -4,10 +4,10 @@
 {{=BR()}}
 <section>
 {{i=0}}
-{{for page in pages:}}
+{{for item in items:}}
 <p>
-{{=pages[i].created_on.date()}}
-{{=A(pages[i].title, _href=URL('show', args=pages[i].id))}}
+{{=items[i].created_on.date()}}
+{{=A(items[i].title, _href=URL('show', args=items[i].id))}}
 </p>
 {{=BR()}}
 {{i+=1}}
