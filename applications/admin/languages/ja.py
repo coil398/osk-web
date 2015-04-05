@@ -245,6 +245,7 @@
 'uncheck all': '全ての選択を解除',
 'Uninstall': 'アプリ削除',
 'update all languages': '全ての言語を更新',
+'upgrade now to %s': 'upgrade now to %s',
 'upload': 'アップロード',
 'Upload': 'Upload',
 'Upload a package:': 'パッケージをアップロード:',

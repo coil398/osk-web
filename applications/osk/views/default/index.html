@@ -3,12 +3,17 @@
 <h1>お知らせ</h1>
 {{=BR()}}
 <section>
+{{i=0}}
 {{for page in pages:}}
 <p>
 {{=pages[i].created_on.date()}}
 {{=A(pages[i].title, _href=URL('show', args=pages[i].id))}}
 </p>
 {{=BR()}}
+{{i+=1}}
+{{if i>4:}}
+{{break}}
+{{pass}}
 {{pass}}
 </section>
 {{=A('タイトル',_href=URL(c='uploader',f='index'))}}

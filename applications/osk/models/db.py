@@ -26,7 +26,8 @@ db.define_table('image',
     Field('file','upload'),
     Field('note','text'),
     Field('upload_on','datetime',default=request.now),
-    Field('upload_by','reference auth_user',default=auth.user_id))
+    Field('upload_by','reference auth_user',default=auth.user_id),
+    format = '%(title)s')
 
 db.page.title.requires = IS_NOT_EMPTY()
 """db.page.body.requires = IS_NOT_EMPTY()"""

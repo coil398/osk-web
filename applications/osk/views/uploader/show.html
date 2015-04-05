@@ -1,7 +1,12 @@
 {{extend 'layout.html'}}
-タイトル:{{=image.title}}
-<img width="1000px"
+<h1>タイトル:{{=image.title}}</h1>
+<br/>
+<img width="500px"
      src="{{=URL('download', args=image.file)}}" />
+<br/>
+<br/>
+<br/>
+uploaded on {{=image.upload_on.date()}}
 <br/>
 概要:{{=image.note}}
 {{=form}}

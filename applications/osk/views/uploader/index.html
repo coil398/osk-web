@@ -2,20 +2,29 @@
 {{=A('画像をアップロード',_href=URL('upload'),_class='btn btn-primary')}}
 <br/><br/>
 サムネイル　　　タイトル　　　　　　　概要
-{{for image in images:}}
+{{for i in range(page*5,pageEnd):}}
 <div class="upImages">
 <span class="UpImage">
 <img width="100px"
-     src="{{=URL('download', args=image.file)}}" />
+     src="{{=URL('download', args=images[i].file)}}" />
  </span>
  <span class="imageTitle">
-{{=(A(image.title, _href=URL("show", args=image.id)))}}
+{{=(A(images[i].title, _href=URL('show', args=images[i].id)))}}
 </span>
-{{if image.note:}}
+{{if images[i].note:}}
 <span class="imageNote">
-{{=image.note}}
+{{=images[i].note}}
+</span>
 {{pass}}
 </div>
 <br/>
 {{pass}}
-{{}}
+{{if page>0:}}
+{{=(A('前のページ',_href=URL('index',args=page-1)))}}
+{{pass}}
+{{try:}}
+{{images[page*5+5]}}
+{{=(A('次のページ',_href=URL('index',args=page+1)))}}
+{{except:}}
+{{pass}}
+<br/>
