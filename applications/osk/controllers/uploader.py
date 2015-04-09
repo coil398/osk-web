@@ -5,10 +5,10 @@ def index():
         page=request.args(0,cast=int)
     else:
         page=0
-    if page*5+5 > len(images):
+    if page*10+10 > len(images):
         pageEnd = len(images)
     else:
-        pageEnd = page*5+5
+        pageEnd = page*10+10
     return dict(page=page,pageEnd=pageEnd,images=images)
 
 @auth.requires_login()

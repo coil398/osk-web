@@ -1,19 +1,14 @@
 {{right_sidebar_enabled = True}}
 {{extend 'layout.html'}}
 <h1>お知らせ</h1>
-{{=BR()}}
+<br/>
 <section>
-{{i=0}}
-{{for item in items:}}
+{{for i in range(page,pageEnd):}}
 <p>
 {{=items[i].created_on.date()}}
 {{=A(items[i].title, _href=URL('show', args=items[i].id))}}
 </p>
-{{=BR()}}
-{{i+=1}}
-{{if i>4:}}
-{{break}}
-{{pass}}
+<br/>
 {{pass}}
 </section>
 {{=A('タイトル',_href=URL(c='uploader',f='index'))}}

@@ -73,6 +73,18 @@
     <div class="flash">{{=response.flash or ''}}</div>
     <div class="navbar-inner">
       <div class="container">
+      <div class="nav">
+      <ul class="nav">
+      <li class='web2py-menu-last'>
+      {{=A('HOME',_href=URL('index'))}}
+    </li>
+    {{if auth.user_id:}}
+    <li class="web2py-menu-last">
+    {{=A('アップローダ',_href=URL(c='uploader',f='index'))}}
+  </li>
+    {{pass}}
+    </ul>
+  </div>
         {{is_mobile=request.user_agent().is_mobile}}
         <!-- the next tag is necessary for bootstrap menus, do not remove -->
         <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" style="{{='display:none;' if not is_mobile else ''}}">

@@ -23,7 +23,7 @@
 {{=(A('前のページ',_href=URL('index',args=page-1)))}}
 {{pass}}
 {{try:}}
-{{images[page*5+5]}}
+{{images[pageEnd]}}
 {{=(A('次のページ',_href=URL('index',args=page+1)))}}
 {{except:}}
 {{pass}}
