@@ -21,14 +21,14 @@ body{
 }
 
 .itemBody{
-    margin-left:20px;
+    margin-left:30px;
     margin-top:-30px;
     letter-spacing:0.2em;
 }
 
 .itemDate{ 
-    float:left;
-    margin-left:15px;
+    float:right;
+    margin-right:20px;
     border-top:solid 1px #eee;
 }
 
