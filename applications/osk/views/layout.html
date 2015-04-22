@@ -76,8 +76,13 @@
       <div class="nav">
       <ul class="nav">
       <li class='web2py-menu-last'>
-      {{=A('HOME',_href=URL('index'))}}
+      {{=A('HOME',_href=URL(c='default',f='index'))}}
     </li>
+       {{if auth.user_id:}}
+    <li class="web2py-menu-last">
+    {{=A('記事の投稿',_href=URL(c='default',f='create'))}}
+  </li>
+    {{pass}}
     {{if auth.user_id:}}
     <li class="web2py-menu-last">
     {{=A('アップローダ',_href=URL(c='uploader',f='index'))}}

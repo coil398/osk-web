@@ -2,7 +2,7 @@
 {{=A('画像をアップロード',_href=URL('upload'),_class='btn btn-primary')}}
 <br/><br/>
 サムネイル　　　タイトル　　　　　　　概要
-{{for i in range(page*5,pageEnd):}}
+{{for i in range(page*10,pageEnd):}}
 <div class="upImages">
 <span class="UpImage">
 <img width="100px"
@@ -15,6 +15,11 @@
 <span class="imageNote">
 {{=images[i].note}}
 </span>
+
+<span class="upload_by">
+{{=images[i].upload_by}}
+</span>
+
 {{pass}}
 </div>
 <br/>

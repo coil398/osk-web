@@ -1,14 +1,38 @@
 {{right_sidebar_enabled = True}}
 {{extend 'layout.html'}}
-<h1>お知らせ</h1>
 <br/>
 <section>
-{{for i in range(page,pageEnd):}}
-<p>
+{{for i in range(page*10,pageEnd):}}
+<pre>
+<h3 class='itemTitle'>
+{{=items[i].title}}
+</h3>
+<h5 class='itemBody'>
+{{=items[i].body}}
+</h5>
+<div class='itemDate'>
 {{=items[i].created_on.date()}}
-{{=A(items[i].title, _href=URL('show', args=items[i].id))}}
-</p>
+</div>
+
+{{if auth.user_id:}}
+<div class='itemEdit'>
+{{=(A('編集する',_href=URL('edit',args=items[i].id)))}}
+</div>
+{{pass}}
+
+</pre>
 <br/>
 {{pass}}
+{{if page>0:}}
+<div class='btn pre'>
+{{=(A('前のページ',_href=URL('index',args=page-1)))}}
+</div>
+{{pass}}
+{{try:}}
+{{items[pageEnd]}}
+<div class='btn next'>
+{{=(A('次のページ',_href=URL('index',args=page+1)))}}
+</div>
+{{except:}}
+{{pass}}
 </section>
-{{=A('タイトル',_href=URL(c='uploader',f='index'))}}

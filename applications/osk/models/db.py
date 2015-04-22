@@ -17,8 +17,6 @@ crud = Crud(db)
 db.define_table('item',
     Field('title'),
     Field('body','text'),
-    Field('category'),
-    Field('tag'),
     Field('created_on','datetime', default=request.now),
     Field('created_by','reference auth_user',default=auth.user_id),
     format = '%(title)s')

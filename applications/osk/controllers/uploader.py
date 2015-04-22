@@ -19,9 +19,10 @@ def upload():
 @auth.requires_login()
 def show():
     image = db.image(request.args(0,cast=int)) or redirect(URL('index'))
+    upload_by = db.auth_user(db.auth_user.id==image.upload_by)['username']
     form = SQLFORM(db.image,image).process(
         next = URL('show',args=request.args))
-    return dict(image=image,form=form)
+    return dict(upload_by=upload_by,image=image,form=form)
 
 def download():
     return response.download(request,db)

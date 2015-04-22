@@ -13,3 +13,37 @@ body{
 .imageNote{
     margin-left:10px;
 }
+
+.itemTitle{
+    margin-left:20px;
+    margin-top:-40px;
+    border-bottom:groove;
+}
+
+.itemBody{
+    margin-left:20px;
+    margin-top:-30px;
+    letter-spacing:0.2em;
+}
+
+.itemDate{ 
+    float:left;
+    margin-left:15px;
+    border-top:solid 1px #eee;
+}
+
+.itemEdit{
+    float:right;
+    padding-bottom:30px;
+    margin-right:10px;
+}
+
+.pre{
+    float:left;
+    margin-bottom:20px;
+}
+
+.next{
+    float:right;
+    margin-bottom:20px;
+}
