@@ -8,7 +8,7 @@ except:
 from gluon.tools import *
 auth = Auth(db)
 auth.define_tables(username=True)
-"""auth.settings.actions_disabled.append('register')"""
+auth.settings.actions_disabled.append('register')
 crud = Crud(db)
 """ユーザー認証設定ここまで"""
 

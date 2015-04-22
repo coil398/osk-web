@@ -15,12 +15,19 @@ def index():
 def user():
     return dict(form=auth())
 
+@auth.requires_login()
 def create():
     form = SQLFORM(db.item).process()
     return dict(form=form)
 
+@auth.requires_login()
 def edit():
     this_page = db.item(request.args(0,cast=int)) or redirect(URL('index'))
     form = SQLFORM(db.item,this_page).process(
         next = URL('index'))
     return dict(form=form)
+
+@auth.requires_login()
+def manage():
+    grid = SQLFORM.smartgrid(db.image,linked_tables=['post'])
+    return dict(grid=grid)
