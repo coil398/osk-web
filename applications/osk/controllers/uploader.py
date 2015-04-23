@@ -26,3 +26,8 @@ def show():
 
 def download():
     return response.download(request,db)
+
+@auth.requires_membership('administrator')
+def manageImage():
+    grid = SQLFORM.smartgrid(db.image,linked_tables=['post'])
+    return dict(grid=grid)

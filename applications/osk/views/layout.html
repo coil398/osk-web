@@ -88,6 +88,14 @@
     {{=A('アップローダ',_href=URL(c='uploader',f='index'))}}
   </li>
     {{pass}}
+    {{if auth.user_groups.values() == ['administrator']:}}
+    <li class="web2py-menu-last">
+    {{=A('記事管理',_href=URL(c='default',f='manageItem'))}}
+    </li>
+    <li class="web2py-menu-last">
+    {{=A('画像管理',_href=URL(c='uploader',f='manageImage'))}}
+    </li>
+    {{pass}}
     </ul>
   </div>
        

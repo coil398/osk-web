@@ -27,7 +27,7 @@ def edit():
         next = URL('index'))
     return dict(form=form)
 
-@auth.requires_login()
-def manage():
-    grid = SQLFORM.smartgrid(db.image,linked_tables=['post'])
+@auth.requires_membership('administrator')
+def manageItem():
+    grid = SQLFORM.smartgrid(db.item,linked_tables=['post'])
     return dict(grid=grid)
