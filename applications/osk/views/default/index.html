@@ -7,9 +7,9 @@
 <h3 class='itemTitle'>
 {{=items[i].title}}
 </h3>
-<h5 class='itemBody'>
-{{=items[i].body}}
-</h5>
+<article class='itemBody'>
+{{=XML(items[i].body)}}
+</article>
 <div class='itemDate'>
 {{=items[i].created_on.date()}}
 </div>
