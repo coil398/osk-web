@@ -31,3 +31,14 @@ def edit():
 def manageItem():
     grid = SQLFORM.smartgrid(db.item,linked_tables=['post'])
     return dict(grid=grid)
+
+@auth.requires_membership('administrator')
+def manageUser():
+    grid = SQLFORM.smartgrid(db.auth_user,linked_tables=['post'])
+    return dict(grid=grid)
+
+@auth.requires_membership('administrator')
+def manageMembership():
+    grid = SQLFORM.smartgrid(db.auth_membership,linked_tables=['post'])
+    return dict(grid=grid)
+

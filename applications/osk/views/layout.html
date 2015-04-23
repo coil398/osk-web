@@ -90,6 +90,12 @@
     {{pass}}
     {{if auth.user_groups.values() == ['administrator']:}}
     <li class="web2py-menu-last">
+    {{=A('メンバー管理',_href=URL(c='default',f='manageUser'))}}
+    </li>
+    <li class="web2py-menu-last">
+    {{=A('権限管理',_href=URL(c='default',f='manageMembership'))}}
+    </li>
+    <li class="web2py-menu-last">
     {{=A('記事管理',_href=URL(c='default',f='manageItem'))}}
     </li>
     <li class="web2py-menu-last">
